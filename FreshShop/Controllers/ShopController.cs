@@ -23,7 +23,16 @@ namespace FreshShop.Controllers
 
         public ActionResult Detail(int id)
         {
-            return View();
+            var productDetail = new ProductDetailViewModel()
+            {
+                ProductID = 0,
+                ProductName = "Fachion Lorem ipsum dolor sit amet",
+                ProductDescription = @"Nam sagittis a augue eget scelerisque. Nullam lacinia consectetur sagittis. Nam sed neque id eros fermentum dignissim quis at tortor. Nullam ultricies urna quis sem sagittis pharetra. Nam erat turpis, cursus in ipsum at, tempor imperdiet metus. In interdum id nulla tristique accumsan. Ut semper in quam nec pretium. Donec egestas finibus suscipit. Curabitur tincidunt convallis arcu.",
+                ProductPrice = 60,
+                DiscountPrice = 40.79f,
+                ProductImages = new string[] { "/images/smp-img-01.jpg", "/images/smp-img-02.jpg", "/images/smp-img-03.jpg" }
+            };
+            return View(productDetail);
         }
     }
 }
