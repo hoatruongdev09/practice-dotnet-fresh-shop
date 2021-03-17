@@ -4,19 +4,21 @@
     <div class="products-single fix">
         <div class="box-img-hover">
             <div class="type-lb">
-                <p class="sale">Sale</p>
+                <div>
+                    <p class="sale cart">Add to cart</p>
+                </div>
             </div>
-            <a href="#"><img src=@Model.ProductImageLink class="img-fluid" alt="Image"></a>
-            <div class="mask-icon">
+            <a href="/shop/detail?id=@Model.ProductID"><img src=@Model.ProductImageLink class="img-fluid" alt="Image"></a>
+            @*<div class="mask-icon">
                 <ul>
                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
                                 class="far fa-heart"></i></a></li>
                 </ul>
                 <a class="cart" href="#">Add to Cart</a>
-            </div>
+            </div>*@
         </div>
         <div class="why-text">
-            <a href="#">
+            <a href="/shop/detail?id=@Model.ProductID">
                 <h4>@Model.ProductName</h4>
             </a>
             <h5> $@Model.ProductPrice</h5>

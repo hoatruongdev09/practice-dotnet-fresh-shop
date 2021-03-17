@@ -1,13 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewData["activeTab"] = 0;
 }
 
 @{
-    void CreateProductView(int productID, string productName, double productPrice, string productImageLink)
+    async Task CreateProductView(int productID, string productName, double productPrice, string productImageLink)
     {
-        @* Html.PartialAsync("_ProductItemView", new ViewDataDictionary(ViewData) { { "ProductID", productID } *@
-        @* ,{"ProductPrice",productPrice},{"ProductImageLink",productImageLink},{"ProductName",productName}}); *@
-        Html.RenderPartial("_ProductItemHomeView", new
+        await Html.RenderPartialAsync("_ProductItemHomeView", new
         ProductViewModel()
         { ProductID = productID, ProductName = productName, ProductPrice = productPrice, ProductImageLink = productImageLink });
     }
@@ -22,8 +21,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends
-                                to see any changes in performance over time.</p>
+                            <p class="m-b-40">
+                                See how your users experience your website in realtime or view <br> trends
+                                to see any changes in performance over time.
+                            </p>
                             <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                         </div>
                     </div>
@@ -35,8 +36,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends
-                                to see any changes in performance over time.</p>
+                            <p class="m-b-40">
+                                See how your users experience your website in realtime or view <br> trends
+                                to see any changes in performance over time.
+                            </p>
                             <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                         </div>
                     </div>
@@ -48,8 +51,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends
-                                to see any changes in performance over time.</p>
+                            <p class="m-b-40">
+                                See how your users experience your website in realtime or view <br> trends
+                                to see any changes in performance over time.
+                            </p>
                             <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                         </div>
                     </div>
@@ -62,7 +67,6 @@
         </div>
     </div>
     <!-- End Slider -->
-
     <!-- Start Categories  -->
     <div class="categories-shop">
         <div class="container">
@@ -133,16 +137,15 @@
             <div class="row special-list">
 
                 @{
-                    CreateProductView(0, "Lorem ipsum dolor sit amet", 7.79, "images/img-pro-01.jpg");
-                    CreateProductView(1, "Lorem ipsum dolor sit amet", 9.79, "images/img-pro-02.jpg");
-                    CreateProductView(2, "Lorem ipsum dolor sit amet", 10.79, "images/img-pro-03.jpg");
-                    CreateProductView(3, "Lorem ipsum dolor sit amet", 15.79, "images/img-pro-04.jpg");
+                    await CreateProductView(0, "Lorem ipsum dolor sit amet", 7.79, "images/img-pro-01.jpg");
+                    await CreateProductView(1, "Lorem ipsum dolor sit amet", 9.79, "images/img-pro-02.jpg");
+                    await CreateProductView(2, "Lorem ipsum dolor sit amet", 10.79, "images/img-pro-03.jpg");
+                    await CreateProductView(3, "Lorem ipsum dolor sit amet", 15.79, "images/img-pro-04.jpg");
                 }
             </div>
         </div>
     </div>
     <!-- End Products  -->
-
     <!-- Start Blog  -->
     <div class="latest-blog">
         <div class="container">
@@ -163,9 +166,11 @@
                         <div class="blog-content">
                             <div class="title-blog">
                                 <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
+                                <p>
+                                    Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
                                     urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
-                                    mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                    mollis. Praesent laoreet lacinia elit id lobortis.
+                                </p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -183,9 +188,11 @@
                         <div class="blog-content">
                             <div class="title-blog">
                                 <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
+                                <p>
+                                    Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
                                     urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
-                                    mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                    mollis. Praesent laoreet lacinia elit id lobortis.
+                                </p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -203,9 +210,11 @@
                         <div class="blog-content">
                             <div class="title-blog">
                                 <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
+                                <p>
+                                    Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
                                     urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
-                                    mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                    mollis. Praesent laoreet lacinia elit id lobortis.
+                                </p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -219,7 +228,6 @@
         </div>
     </div>
     <!-- End Blog  -->
-
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
